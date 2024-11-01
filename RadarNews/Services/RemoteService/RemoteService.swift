@@ -16,7 +16,7 @@ class Remote:RemoteService{
     private let apiKey = "eb45cdda738448a18ec014a56e9215e8"
     
     func fetchNews(query: String, fromDate: String) -> AnyPublisher<[News], Error> {
-        guard let url = URL(string: "https://newsapi.org/v2/everything?q=\(query)&from=\(fromDate)&sortBy=publishedAt&apiKey=\(apiKey)") else{
+        guard let url = URL(string: "https://newsapi.org/v2/everything?q=apple&from=\(fromDate)&sortBy=publishedAt&apiKey=\(apiKey)") else{
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
         
