@@ -23,6 +23,7 @@
 		1E7D032C2CD4779D00CD2394 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E7D032A2CD4779D00CD2394 /* CollectionViewCell.xib */; };
 		1E8C03AD2CD56E850028B390 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C03AB2CD56E850028B390 /* DetailsViewController.swift */; };
 		1E8C03AE2CD56E850028B390 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C03AC2CD56E850028B390 /* DetailsViewController.xib */; };
+		1E8C03B22CD57B1F0028B390 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C03B12CD57B1F0028B390 /* DetailsViewModel.swift */; };
 		1EDBC15F2CD5118700689794 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDBC15E2CD5118700689794 /* ListViewModel.swift */; };
 		1EDBC1622CD520CB00689794 /* UiViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDBC1612CD520CB00689794 /* UiViewControllerExtension.swift */; };
 		6D85C8728A4CF9D1195EDC6D /* Pods_RadarNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CF5641C0B79C2737B1A4CC /* Pods_RadarNewsTests.framework */; };
@@ -68,6 +69,7 @@
 		1E7D032A2CD4779D00CD2394 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		1E8C03AB2CD56E850028B390 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1E8C03AC2CD56E850028B390 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		1E8C03B12CD57B1F0028B390 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		1EDBC15E2CD5118700689794 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		1EDBC1612CD520CB00689794 /* UiViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExtension.swift; sourceTree = "<group>"; };
 		244326A23B9130303E8EBB57 /* Pods-RadarNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarNews.release.xcconfig"; path = "Target Support Files/Pods-RadarNews/Pods-RadarNews.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				1EDBC15E2CD5118700689794 /* ListViewModel.swift */,
+				1E8C03B12CD57B1F0028B390 /* DetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				1E7D032B2CD4779D00CD2394 /* CollectionViewCell.swift in Sources */,
 				1E7D02EA2CD4586C00CD2394 /* AppDelegate.swift in Sources */,
 				1E7D02EC2CD4586C00CD2394 /* SceneDelegate.swift in Sources */,
+				1E8C03B22CD57B1F0028B390 /* DetailsViewModel.swift in Sources */,
 				1EDBC15F2CD5118700689794 /* ListViewModel.swift in Sources */,
 				1E7D03212CD45DDA00CD2394 /* NewsModel.swift in Sources */,
 				1E8C03AD2CD56E850028B390 /* DetailsViewController.swift in Sources */,
