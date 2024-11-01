@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,39 +16,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nodata" translatesAutoresizingMaskIntoConstraints="NO" id="qHL-CM-k3l">
+                                <rect key="frame" x="37.666666666666657" y="365.66666666666669" width="339" height="271.00000000000006"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hfe-CK-7HX">
                                 <rect key="frame" x="15.999999999999993" y="140" width="124.33333333333331" height="31.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="XY1-E3-ecs">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY1-E3-ecs">
                                 <rect key="frame" x="214.33333333333337" y="137.66666666666666" width="178" height="36"/>
+                                <date key="date" timeIntervalSinceReferenceDate="752006378.25075901">
+                                    <!--2024-10-30 18:39:38 +0000-->
+                                </date>
                                 <locale key="locale" localeIdentifier="en"/>
                             </datePicker>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bVm-wd-MgZ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bVm-wd-MgZ">
                                 <rect key="frame" x="10" y="182.66666666666669" width="394" height="679.33333333333326"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYl-DB-7hS">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SNs-PC-SFR">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kv7-qe-kvQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="bVm-wd-MgZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="BW8-Qe-v0I"/>
                             <constraint firstItem="hfe-CK-7HX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.300254" id="Ckl-pI-K2c"/>
@@ -57,16 +53,20 @@
                             <constraint firstItem="XY1-E3-ecs" firstAttribute="leading" secondItem="hfe-CK-7HX" secondAttribute="trailing" constant="74" id="EAw-nM-BxN"/>
                             <constraint firstItem="XY1-E3-ecs" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.430025" id="FQ0-mF-DdM"/>
                             <constraint firstItem="hfe-CK-7HX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0352113" id="IqT-he-PXa"/>
+                            <constraint firstItem="qHL-CM-k3l" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.302455" id="K3N-5H-tES"/>
+                            <constraint firstItem="qHL-CM-k3l" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.818841" id="Lpa-2B-8Jp"/>
                             <constraint firstItem="bVm-wd-MgZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="MT7-JG-ORv"/>
                             <constraint firstItem="bVm-wd-MgZ" firstAttribute="top" secondItem="hfe-CK-7HX" secondAttribute="bottom" constant="11" id="P22-s4-yj0"/>
                             <constraint firstItem="XY1-E3-ecs" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0402973" id="Qvc-Vw-nOt"/>
+                            <constraint firstItem="qHL-CM-k3l" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="TI9-WW-noG"/>
                             <constraint firstItem="hfe-CK-7HX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ULe-kO-KBz"/>
                             <constraint firstItem="XY1-E3-ecs" firstAttribute="centerY" secondItem="hfe-CK-7HX" secondAttribute="centerY" id="dAq-Hd-D2W"/>
                             <constraint firstItem="hfe-CK-7HX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="onn-5w-eYg"/>
+                            <constraint firstItem="qHL-CM-k3l" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ucn-hH-GcN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="PFn-Go-hfm">
-                        <barButtonItem key="rightBarButtonItem" image="heart.circle.fill" catalog="system" id="npW-QY-59V">
+                        <barButtonItem key="rightBarButtonItem" image="heart.circle.fill" catalog="system" width="32" id="npW-QY-59V">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <action selector="addToFav:" destination="BYZ-38-t0r" id="2cS-uY-4bO"/>
@@ -75,12 +75,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="XY1-E3-ecs" id="Mpd-FI-gti"/>
+                        <outlet property="imgNoData" destination="qHL-CM-k3l" id="RKA-CE-tSD"/>
                         <outlet property="newsCollection" destination="bVm-wd-MgZ" id="bN4-t0-o4V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1062.3188405797102" y="3.3482142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RFZ-fq-DKz">
@@ -90,6 +91,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xWX-ED-AWS">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -103,11 +107,12 @@
     </scenes>
     <resources>
         <image name="heart.circle.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="nodata" width="420" height="183"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

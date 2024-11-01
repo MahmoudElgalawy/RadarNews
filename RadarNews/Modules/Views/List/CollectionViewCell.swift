@@ -9,6 +9,8 @@ import UIKit
 import SDWebImage
 
 class CollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var titleBack: UIView!
     @IBOutlet weak var vBack: UIView!
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var author: UILabel!
@@ -18,14 +20,19 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         vBack.layer.cornerRadius = 10
         imgNews.layer.cornerRadius = 10
-        vBack.layer.masksToBounds = true
+        titleBack.layer.cornerRadius = 10
+        titleBack.layer.masksToBounds = true
     }
     static func nib()->UINib{
         return UINib(nibName: "CollectionViewCell", bundle: nil)
     }
     func configureCell(news:News){
         guard let imgUrl = news.urlToImage else{return}
-        imgNews.sd_setImage(with: URL(string: imgUrl))
-        
+        DispatchQueue.main.async {
+            self.imgNews.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named:"Nophoto"))
+        }
+        title.text = news.title
+        author.text = news.author ?? "Reliable Source"
+        desc.text = news.description
     }
 }
