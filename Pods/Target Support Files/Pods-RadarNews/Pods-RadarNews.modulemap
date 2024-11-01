@@ -1,0 +1,6 @@
+framework module Pods_RadarNews {
+  umbrella header "Pods-RadarNews-umbrella.h"
+
+  export *
+  module * { export * }
+}

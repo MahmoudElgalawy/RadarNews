@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var vBack: UIView!
@@ -23,6 +24,8 @@ class CollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "CollectionViewCell", bundle: nil)
     }
     func configureCell(news:News){
+        guard let imgUrl = news.urlToImage else{return}
+        imgNews.sd_setImage(with: URL(string: imgUrl))
         
     }
 }
