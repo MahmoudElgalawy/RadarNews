@@ -12,6 +12,7 @@ protocol NewsViewModelProtocol: AnyObject {
     var news: [News] { get }
     var searchNews:[News] { get }
     var errorMessage: String? { get }
+    var selectedNews: News?{get}
     func getNews(query: String, from: String)
 }
 
@@ -19,6 +20,7 @@ class ListViewModel:ObservableObject,NewsViewModelProtocol{
     @Published var news: [News] = []
     @Published var searchNews:[News] = []
     @Published var errorMessage : String?
+    @Published var selectedNews: News?
     
     private let remoteService : RemoteService!
     private var cancellables = Set<AnyCancellable>()

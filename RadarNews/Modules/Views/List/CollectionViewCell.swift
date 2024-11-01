@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 
 class CollectionViewCell: UICollectionViewCell {
     
@@ -27,9 +27,10 @@ class CollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "CollectionViewCell", bundle: nil)
     }
     func configureCell(news:News){
-        guard let imgUrl = news.urlToImage else{return}
+        guard let imgUrl = news.urlToImage else{
+            return imgNews.image =  UIImage(named:"Nophoto")}
         DispatchQueue.main.async {
-            self.imgNews.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named:"Nophoto"))
+            self.imgNews.kf.setImage(with: URL(string: imgUrl))
         }
         title.text = news.title
         author.text = news.author ?? "Reliable Source"

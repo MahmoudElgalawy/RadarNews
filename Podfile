@@ -8,7 +8,7 @@ target 'RadarNews' do
   # Pods for RadarNews
 pod 'SDWebImage', '~> 5.0'
 pod 'CombineDataSources'
-
+pod 'Kingfisher', '~> 7.0'
 
   target 'RadarNewsTests' do
     inherit! :search_paths
