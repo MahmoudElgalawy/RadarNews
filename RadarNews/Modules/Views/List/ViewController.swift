@@ -27,30 +27,7 @@ class ViewController: UIViewController,UICollectionViewDelegate, UISearchResults
         imgNoData.isHidden = true
         newsCollection.delegate = self
         searchController.searchResultsUpdater = self
-        viewModel.$searchNews
-                   .receive(on: RunLoop.main)
-                   .sink {  [weak self] news in
-                       DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                           if news.isEmpty{
-                               self?.imgNoData.isHidden = false
-                               self?.newsCollection.isHidden = true
-                           }else{
-                               self?.imgNoData.isHidden = true
-                               self?.newsCollection.isHidden = false
-                               self?.updateCollectionView(with: news)
-                               self?.indicator?.stopAnimating()
-                           }}}
-                   .store(in: &cancellables)
-//        viewModel.$selectedNews
-//                .compactMap { $0 }
-//                .sink { [weak self] item in
-//                    let detailsVc = DetailsViewController(nibName: "DetailsViewController", bundle: nil)
-//                    detailsVc.detailsViewModel.newsDetails = item
-//                    detailsVc.navigationItem.leftBarButtonItem = self?.back
-//                    detailsVc.navigationItem.leftBarButtonItem?.tintColor = UIColor.black
-//                    self?.navigationController?.pushViewController(detailsVc, animated: true)
-//                }
-//                .store(in: &cancellables)
+        observers()
         setupCollectionView()
         searchBar()
         registerCell()
@@ -59,6 +36,17 @@ class ViewController: UIViewController,UICollectionViewDelegate, UISearchResults
         fetchNews()
         back = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward"), style: .plain, target: self, action: #selector(backButton))
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        if viewModel.searchNews.isEmpty{
+//            self.imgNoData.isHidden = false
+//            self.imgNoData.image = UIImage(named: "nodata")
+//            self.newsCollection.isHidden = true
+//        }else{
+//            self.imgNoData.isHidden = true
+//            self.newsCollection.isHidden = false
+//        }
+//    }
 
     @IBAction func addToFav(_ sender: Any) {
     }
@@ -67,13 +55,13 @@ class ViewController: UIViewController,UICollectionViewDelegate, UISearchResults
 
 
 extension ViewController {
-    func setIndicator(){
+    private func setIndicator(){
         indicator = UIActivityIndicatorView(style: .large)
         indicator?.color = .black
         indicator?.center = self.view.center
         self.view.addSubview(indicator!)
     }
-    func setupCollectionView(){
+    private func setupCollectionView(){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 2
@@ -85,7 +73,7 @@ extension ViewController {
                    return cell
                }
     }
-    func searchBar(){
+    private func searchBar(){
         searchController.searchBar.tintColor = UIColor.lightGray
         let searchBar = searchController.searchBar
         searchBar.searchTextField.backgroundColor = UIColor.systemGray5
@@ -103,13 +91,13 @@ extension ViewController {
     }
     private func updateCollectionView(with news: [News]) {
                 var snapshot = NSDiffableDataSourceSnapshot<Int, News>()
-                let uniqueNews = Array(Set(news))
+                //let uniqueNews = Array(Set(news))
                 snapshot.appendSections([0])
-                snapshot.appendItems(uniqueNews)
+                snapshot.appendItems(news)
                 self.dataSource.apply(snapshot, animatingDifferences: true)
             
        }
-    func registerCell(){
+    private func registerCell(){
         newsCollection.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: "CollectionViewCell")
     }
     private func fetchNews() {
@@ -122,7 +110,7 @@ extension ViewController {
             fetchNews()
         }
     @objc func backButton() {
-        navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.popViewController(animated: true)
        }
 }
@@ -150,15 +138,40 @@ extension ViewController{
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailsVc = DetailsViewController(nibName: "DetailsViewController", bundle: nil)
-        detailsVc.detailsViewModel.newsDetails = viewModel.searchNews[indexPath.row]
-        detailsVc.navigationItem.leftBarButtonItem = back
-        detailsVc.navigationItem.leftBarButtonItem?.tintColor = UIColor.black
-        navigationController?.pushViewController(detailsVc, animated: true)
+//        let detailsVc = DetailsViewController(nibName: "DetailsViewController", bundle: nil)
+//        detailsVc.detailsViewModel.newsDetails = viewModel.searchNews[indexPath.row]
+//        print("Selected News:", viewModel.searchNews[indexPath.row].title)
+//        detailsVc.navigationItem.leftBarButtonItem = back
+//        detailsVc.navigationItem.leftBarButtonItem?.tintColor = UIColor.black
+//        navigationController?.pushViewController(detailsVc, animated: true)
+        let selectedNews = viewModel.searchNews[indexPath.row]
+        viewModel.selectedNews = selectedNews
     }
 }
 
 extension ViewController{
+    
+    private func observers(){
+        viewModel.$searchNews
+                   .receive(on: RunLoop.main)
+                   .sink {  [weak self] news in
+                               self?.updateCollectionView(with: news)
+                               self?.indicator?.stopAnimating()
+                           }
+                   .store(in: &cancellables)
+        viewModel.$selectedNews
+                .compactMap { $0 }
+                .sink { [weak self] item in
+                    let detailsVc = DetailsViewController(nibName: "DetailsViewController", bundle: nil)
+                    detailsVc.detailsViewModel.newsDetails = item
+                    detailsVc.navigationItem.leftBarButtonItem = self?.back
+                    detailsVc.navigationItem.title = "Details"
+                    detailsVc.navigationItem.leftBarButtonItem?.tintColor = UIColor.black
+                    self?.navigationController?.pushViewController(detailsVc, animated: true)
+                }
+                .store(in: &cancellables)
+    }
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else{return}
         viewModel.filterNews(searchText: text)

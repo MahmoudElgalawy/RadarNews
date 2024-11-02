@@ -9,5 +9,5 @@ import Foundation
 
 
 class DetailsViewModel {
-    var newsDetails: News? = nil
+    var newsDetails: News!
 }
