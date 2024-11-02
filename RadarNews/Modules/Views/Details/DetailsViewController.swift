@@ -27,21 +27,20 @@ class DetailsViewController: UIViewController {
     }
     
     private func setupUI(){
-        guard let url = detailsViewModel.newsDetails?.urlToImage else{return imgNews.image =  UIImage(named:"Nophoto")}
-        DispatchQueue.main.async {
-            self.imgNews.kf.setImage(with: URL(string: url))
-        }
+        guard let url = detailsViewModel.newsDetails?.urlToImage else{return}
+            self.imgNews.kf.setImage(with: URL(string: url),placeholder: UIImage(named:"Nophoto"))
         titleNews.text = detailsViewModel.newsDetails?.title
-        author.text = detailsViewModel.newsDetails?.author
+        print(detailsViewModel.newsDetails?.title ?? "")
+        author.text = detailsViewModel.newsDetails?.author ?? "Reliable Source"
+        print( detailsViewModel.newsDetails?.author ?? "")
         descrip.text = detailsViewModel.newsDetails?.description
     }
     
     private func setupView(){
-        navigationController?.navigationBar.prefersLargeTitles = false
         favBtn.tintColor = UIColor.color1
-        vBack.layer.cornerRadius = 10
-        imgNews.layer.cornerRadius = 10
-        authorBack.layer.cornerRadius = 13
+        vBack.layer.cornerRadius = 15
+        imgNews.layer.cornerRadius = 15
+        authorBack.layer.cornerRadius = 20
         authorBack.layer.masksToBounds = true
     }
 

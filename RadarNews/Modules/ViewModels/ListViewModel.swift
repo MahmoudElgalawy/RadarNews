@@ -41,7 +41,6 @@ class ListViewModel:ObservableObject,NewsViewModelProtocol{
                        }, receiveValue: { [weak self] news in
                            self?.news = news
                            self?.searchNews = news
-                           print(news)
                        })
                        .store(in: &cancellables)
 
