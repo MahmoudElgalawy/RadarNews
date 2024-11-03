@@ -25,10 +25,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY1-E3-ecs">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY1-E3-ecs">
                                 <rect key="frame" x="214.33333333333337" y="137.66666666666666" width="178" height="36"/>
-                                <date key="date" timeIntervalSinceReferenceDate="752006378.25075901">
-                                    <!--2024-10-30 18:39:38 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="752269178.25075901">
+                                    <!--2024-11-02 19:39:38 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="en"/>
                             </datePicker>
@@ -69,7 +69,7 @@
                         <barButtonItem key="rightBarButtonItem" image="heart.circle.fill" catalog="system" width="32" id="npW-QY-59V">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <action selector="addToFav:" destination="BYZ-38-t0r" id="2cS-uY-4bO"/>
+                                <action selector="favouriteView:" destination="BYZ-38-t0r" id="2cS-uY-4bO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
