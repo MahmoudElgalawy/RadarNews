@@ -29,7 +29,6 @@
 		1E8C03B62CD64C700028B390 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C03B42CD64C700028B390 /* FavoriteViewController.xib */; };
 		1E8C03BA2CD64D190028B390 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C03B92CD64D190028B390 /* LocalService.swift */; };
 		1EDBC15F2CD5118700689794 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDBC15E2CD5118700689794 /* ListViewModel.swift */; };
-		1EDBC1622CD520CB00689794 /* UiViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDBC1612CD520CB00689794 /* UiViewControllerExtension.swift */; };
 		6D85C8728A4CF9D1195EDC6D /* Pods_RadarNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CF5641C0B79C2737B1A4CC /* Pods_RadarNewsTests.framework */; };
 		88FB88E07535D7507E0F47A0 /* Pods_RadarNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295615FB6234A9FAA31E8F5B /* Pods_RadarNews.framework */; };
 		CBF6FC32819A3C2BE37A7AFF /* Pods_RadarNews_RadarNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD7AFDE0CDB2B1080406AFA /* Pods_RadarNews_RadarNewsUITests.framework */; };
@@ -79,7 +78,6 @@
 		1E8C03B42CD64C700028B390 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		1E8C03B92CD64D190028B390 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		1EDBC15E2CD5118700689794 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		1EDBC1612CD520CB00689794 /* UiViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewControllerExtension.swift; sourceTree = "<group>"; };
 		244326A23B9130303E8EBB57 /* Pods-RadarNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarNews.release.xcconfig"; path = "Target Support Files/Pods-RadarNews/Pods-RadarNews.release.xcconfig"; sourceTree = "<group>"; };
 		295615FB6234A9FAA31E8F5B /* Pods_RadarNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RadarNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2F25C66431D4CE13310379 /* Pods-RadarNews-RadarNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarNews-RadarNewsUITests.release.xcconfig"; path = "Target Support Files/Pods-RadarNews-RadarNewsUITests/Pods-RadarNews-RadarNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			children = (
 				1E7D031F2CD45DBE00CD2394 /* Model */,
 				1E7D03252CD4773D00CD2394 /* Modules */,
-				1EDBC1602CD5209D00689794 /* Extensions */,
 				1E7D031C2CD4587F00CD2394 /* Services */,
 				1E7D02E92CD4586C00CD2394 /* AppDelegate.swift */,
 				1E7D02EB2CD4586C00CD2394 /* SceneDelegate.swift */,
@@ -282,14 +279,6 @@
 				1E418F4E2CD6A2A600A116F4 /* FavouriteViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		1EDBC1602CD5209D00689794 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1EDBC1612CD520CB00689794 /* UiViewControllerExtension.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5520A1216E45C43AFD9041AE /* Pods */ = {
@@ -551,7 +540,6 @@
 				1E7D02EE2CD4586C00CD2394 /* ViewController.swift in Sources */,
 				1E7D03242CD4686E00CD2394 /* RemoteService.swift in Sources */,
 				1E7D02F42CD4586C00CD2394 /* RadarNews.xcdatamodeld in Sources */,
-				1EDBC1622CD520CB00689794 /* UiViewControllerExtension.swift in Sources */,
 				1E7D032B2CD4779D00CD2394 /* CollectionViewCell.swift in Sources */,
 				1E7D02EA2CD4586C00CD2394 /* AppDelegate.swift in Sources */,
 				1E7D02EC2CD4586C00CD2394 /* SceneDelegate.swift in Sources */,
