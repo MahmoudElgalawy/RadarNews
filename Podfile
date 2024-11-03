@@ -6,7 +6,6 @@ target 'RadarNews' do
   use_frameworks!
 
   # Pods for RadarNews
-pod 'SDWebImage', '~> 5.0'
 pod 'CombineDataSources'
 pod 'Kingfisher', '~> 7.0'
 
