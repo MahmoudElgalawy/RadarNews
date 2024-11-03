@@ -35,7 +35,6 @@ class ViewController: UIViewController,UICollectionViewDelegate, UISearchResults
         setupCollectionView()
         searchBar()
         registerCell()
-        self.hideKeyboardWhenTappedAround()
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         fetchNews()
         back = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.backward"), style: .plain, target: self, action: #selector(backButton))
