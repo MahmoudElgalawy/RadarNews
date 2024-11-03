@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol NewsViewModelProtocol: AnyObject {
-    var news: [News] { get }
+    var news: [News]? { get }
     var searchNews:[News] { get }
     var errorMessage: String? { get }
     var selectedNews: News?{get}
@@ -17,7 +17,7 @@ protocol NewsViewModelProtocol: AnyObject {
 }
 
 class ListViewModel:ObservableObject,NewsViewModelProtocol{
-    @Published var news: [News] = []
+    @Published var news: [News]?
     @Published var searchNews:[News] = []
     @Published var errorMessage : String?
     @Published var selectedNews: News?
@@ -39,18 +39,18 @@ class ListViewModel:ObservableObject,NewsViewModelProtocol{
                                break
                            }
                        }, receiveValue: { [weak self] news in
-                           self?.news = news
-                           self?.searchNews = news
+                           let uniqueNews = Array(Set(news))
+                           self?.news = uniqueNews
+                           self?.searchNews = uniqueNews
                        })
                        .store(in: &cancellables)
 
     }
-    
     func filterNews(searchText:String){
         if searchText.isEmpty {
-            searchNews = news
+             news = searchNews
         }else{
-            searchNews = news.filter{
+            news = searchNews.filter{
                 $0.title.lowercased().contains(searchText.lowercased())
             }
         }

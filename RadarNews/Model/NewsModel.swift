@@ -15,7 +15,6 @@ struct News: Codable,Hashable {
     let author: String?
     let title : String
     let description: String?
-    let publishedAt: String
     let urlToImage: String?
 }
 
