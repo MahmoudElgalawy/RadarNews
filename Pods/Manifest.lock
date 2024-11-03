@@ -1,26 +1,20 @@
 PODS:
   - CombineDataSources (0.2.5)
   - Kingfisher (7.12.0)
-  - SDWebImage (5.19.4):
-    - SDWebImage/Core (= 5.19.4)
-  - SDWebImage/Core (5.19.4)
 
 DEPENDENCIES:
   - CombineDataSources
   - Kingfisher (~> 7.0)
-  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - CombineDataSources
     - Kingfisher
-    - SDWebImage
 
 SPEC CHECKSUMS:
   CombineDataSources: dcbc3b06a038ffdf620b3b4533d3ecaf76ca6a2e
   Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
-  SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
 
-PODFILE CHECKSUM: e8bf9916755c00acdb35399ef3635ef5bf7d22cd
+PODFILE CHECKSUM: de9b7986155534591e2918c9904e0a81962e4450
 
 COCOAPODS: 1.15.2
